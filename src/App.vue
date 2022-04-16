@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">ShareCar</a>
+      <router-link class="navbar-brand" to="/">ShareCar</router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,7 +26,7 @@
           </li>
         </ul>
         <button type="button" class="btn btn-outline-primary">Connexion</button>
-        <button type="button" class="btn btn-outline-secondary">Acheter ça voiture</button>
+        <router-link class="btn btn-outline-secondary" to="/acheter-voiture">Acheter ça voiture</router-link>
       </div>
     </div>
   </nav>
@@ -59,5 +59,20 @@ export default {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+body, html{height:100%;}
+
+body{
+  text-align:center;
+}
+
+footer{
+
+  background:#ccc;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding-top:50px;
+  height:50px;
 }
 </style>
