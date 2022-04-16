@@ -10,4 +10,4 @@ class RegisterApi {
     }
 }
 
-export default new RegisterApi();
+export default new RegisterApi()

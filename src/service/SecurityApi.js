@@ -8,6 +8,10 @@ class SecurityApi {
         const url = this.getBaseUrl() + '/'
         return axios.post(url, data)
     }
+
+    logout() {
+        localStorage.removeItem('user');
+    }
 }
 
 export default new SecurityApi();

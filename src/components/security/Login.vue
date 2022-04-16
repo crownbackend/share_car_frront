@@ -52,7 +52,7 @@ export default {
           formData.append('email', this.dataForm.email)
           formData.append('password', this.dataForm.password)
           SecurityApi.login(formData).then(response => {
-            console.log(response);
+            localStorage.setItem('user', JSON.stringify(response.data));
           }).catch(error => {
             console.log(error)
           })
