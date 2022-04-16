@@ -25,7 +25,7 @@
             </ul>
           </li>
         </ul>
-        <button type="button" class="btn btn-outline-primary">Connexion</button>
+        <router-link class="btn btn-outline-primary" to="/connexion">Connexion</router-link>
         <router-link class="btn btn-outline-secondary" to="/acheter-voiture">Acheter ça voiture</router-link>
       </div>
     </div>
