@@ -53,6 +53,7 @@ export default {
           formData.append('password', this.dataForm.password)
           SecurityApi.login(formData).then(response => {
             localStorage.setItem('user', JSON.stringify(response.data));
+            this.$router.push('/')
           }).catch(error => {
             console.log(error)
           })

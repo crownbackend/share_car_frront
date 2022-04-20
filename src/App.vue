@@ -25,24 +25,35 @@
             </ul>
           </li>
         </ul>
-        <router-link class="btn btn-outline-primary" to="/connexion">Connexion</router-link>
+        <router-link v-if="!user" class="btn btn-outline-primary" to="/connexion">Connexion</router-link>
+        <button v-else class="btn btn-outline-primary" @click="logOut">Deconnexion</button>
         <router-link class="btn btn-outline-secondary" to="/acheter-voiture">Acheter ça voiture</router-link>
       </div>
     </div>
   </nav>
-  <router-view />
-  <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
-  </footer>
+  <router-view :key="$route.fullPath" />
+<!--  <footer class="blog-footer">-->
+<!--    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
+<!--    <p>-->
+<!--      <a href="#">Back to top</a>-->
+<!--    </p>-->
+<!--  </footer>-->
 </template>
 
 <script>
-
+import AuthService from './service/AuthService'
 export default {
   name: 'App',
+  data() {
+    return {
+      user : AuthService.getUser()
+    }
+  },
+  methods: {
+    logOut() {
+      AuthService.logOut();
+    }
+  }
 }
 </script>
 

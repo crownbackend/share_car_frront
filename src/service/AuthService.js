@@ -10,6 +10,10 @@ class AuthService {
     getToken() {
         return JSON.parse(localStorage.getItem('user'));
     }
+
+    logOut() {
+        localStorage.removeItem('user');
+    }
 }
 
 export default new AuthService()
