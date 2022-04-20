@@ -3,20 +3,14 @@
     <h1 class="p-3">Connexion</h1>
     <form @submit="onSubmit">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
         <input type="email" class="form-control" v-model="dataForm.email" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
         <input type="password" v-model="dataForm.password" class="form-control" id="exampleInputPassword1">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      {{errors}}
+      <button type="submit" class="btn btn-primary">Connexion</button>
     </form>
   </div>
 </template>
@@ -33,8 +27,7 @@ export default {
       dataForm: {
         email: '',
         password: ''
-      },
-      errors: []
+      }
     }
   },
   methods: {
